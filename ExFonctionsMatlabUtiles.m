@@ -1,9 +1,9 @@
 % On donne ici plusieurs fonctions potentiellement utiles à l'APP
 
 % Lecture (sn: données, fréquence d'échantillonnage, nombre de bits de  quantification
-[s1, fe, NBITS] = wavread('son1');
-[s2, fe, NBITS] = wavread('son2');
-[s3, fe, NBITS] = wavread('son3');
+[s1, fe] = audioread('SonsACompresser/son1.wav');
+[s2, fe] = audioread('SonsACompresser/son2.wav');
+[s3, fe] = audioread('SonsACompresser/son3.wav');
 
 % Calcul du pas de la fréquence pour un spectre discret ainsi que de la plage de fréquence
 N = length(s1);
@@ -15,17 +15,17 @@ figure;
 subplot(3, 1, 1)
 plot(s1,'r');
 hold on
-plot(env1);
+%plot(env1);
 
 subplot(3, 1, 2)
 plot(s2,'r');
 hold on
-plot(env2);
+%plot(env2);
 
 subplot(3, 1, 3)
 plot(s3,'r');
 hold on 
-plot(env3);
+%plot(env3);
 
 
 
@@ -57,6 +57,16 @@ axis([-fe/5, fe/5, 0 , 0.1])
 xlabel('f (Hz)')
 ylabel('Amplitude (V)')
 title('Spectre du son 3')
+
+figure;
+subplot(3, 1, 1)
+plot(freq, angle(res1))
+
+subplot(3, 1, 2)
+plot(freq, angle(res2))
+
+subplot(3, 1, 3)
+plot(freq, angle(res3))
 
 % Écoute des fichiers (supporté seulement sous windows: wavplay)
 % Il est possible d'utiliser soundsc (independant de tous les systemes
