@@ -245,3 +245,7 @@ pause(3)
 soundsc(rebuilt_s3_lin, fe);
 pause(3)
 soundsc(rebuilt_s3_splin, fe);
+
+filename = 'son3Spline.wav';
+newson3Spline = rebuilt_s3_splin./(max(abs(rebuilt_s3_splin)));
+audiowrite(filename,newson3Spline,fe)
