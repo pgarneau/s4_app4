@@ -21,6 +21,7 @@ for index = 1:nb_peaks
 end
 
 t = 0:1:50;
+figure;
 plot(t, subs(sum_total, t));
 
 end
