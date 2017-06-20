@@ -22,7 +22,7 @@ s1mag = abs(s1fft);
 % Plot magnitude
 figure;
 plot(freq, s1mag)
-axis([-fe/5, fe/5, 0 , 0.2])
+%axis([-fe/5, fe/5, 0 , 0.2])
 xlabel('f (Hz)')
 ylabel('Amplitude (V)')
 title('Spectre du son')
@@ -37,14 +37,7 @@ xlabel('f (Hz)')
 ylabel('Phase')
 title('Phase du son')
 
-% Find peaks
-nbpeaks = 32;
-[amp, freq] = findpeaks(s1mag(1:end/2), 'MinPeakHeight', 1000, 'NPeaks', nbpeaks);
-sum_total = 0;
-for index = 1:nbpeaks
-    %disp(freq(index));
-    %disp(s1phase(freq(index)));
-end
+sum_total = RebuildSinus(s1mag, s1phase, fe, freq);
 
 % Find envelope
 env = abs(s1);

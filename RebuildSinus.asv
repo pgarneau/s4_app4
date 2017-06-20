@@ -1,0 +1,23 @@
+function [ output_args ] = RebuildSinus(sound_mag, sound_phase, fe, freq)
+% Find peaks
+nb_peaks = 32;
+min_peak_height = 100;
+[amp, freq_index] = findpeaks(sound_mag(1:end/2), 'MinPeakHeight', min_peak_height, 'NPeaks', nbpeaks);
+
+% Get peak phase values
+phase = ones(32);
+for index = 1:nbpeaks
+    phase(index) = sound_phase(freq_index(index));
+end
+
+% Rebuild sine
+sum_total = 0;
+t = 1/fe;
+for index = 1:nbpeaks
+    cos_content = 2*pi*freq(freq_index(index))+
+    result = amp(index)*cos(
+end
+
+
+end
+
