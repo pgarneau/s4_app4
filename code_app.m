@@ -108,7 +108,7 @@ env1 = abs(s1);
 env2 = abs(s2);
 env3 = abs(s3);
 
-L = 2000; %Filter length
+L = 3000; %Filter length
 h = ones(1, L)/L;
 
 %Convolution
@@ -228,11 +228,11 @@ plot(rebuilt_s3_lin)
 subplot(3,1,3)
 plot(rebuilt_s3_splin)
 
-soundsc(s1, fe);
-pause(3)
-soundsc(rebuilt_s1_lin, fe);
-pause(3)
-soundsc(rebuilt_s1_splin, fe);
+% soundsc(s1, fe);
+% pause(3)
+% soundsc(rebuilt_s1_lin, fe);
+% pause(3)
+% soundsc(rebuilt_s1_splin, fe);
 
 % soundsc(s2, fe);
 % pause(3)
@@ -240,8 +240,8 @@ soundsc(rebuilt_s1_splin, fe);
 % pause(3)
 % soundsc(rebuilt_s2_splin, fe);
 
-% soundsc(s2, fe);
-% pause(3)
-% soundsc(rebuilt_s3_lin, fe);
-% pause(3)
-% soundsc(rebuilt_s3_splin, fe);
+soundsc(s3, fe);
+pause(3)
+soundsc(rebuilt_s3_lin, fe);
+pause(3)
+soundsc(rebuilt_s3_splin, fe);

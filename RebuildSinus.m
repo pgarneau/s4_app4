@@ -1,8 +1,9 @@
 function [ sum_total ] = RebuildSinus(sound_mag, sound_phase, fe, N)
 % Find peaks
 % Adjust depending on signal
-min_peak_distance = 600;
-min_peak_height = 1;
+min_peak_distance = 50; % [1:240, 2:500, 3:50]
+min_peak_height = 23; % [1:1, 2:3, 3:23]
+
 [amp, freq] = findpeaks(sound_mag(1:end/2), 'MinPeakHeight', min_peak_height, 'MinPeakDistance', min_peak_distance);
 
 disp(length(amp));
