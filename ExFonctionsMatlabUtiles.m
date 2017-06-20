@@ -2,8 +2,8 @@
 
 % Lecture (sn: données, fréquence d'échantillonnage, nombre de bits de  quantification
 [s1, fe] = audioread('SonsACompresser/son1.wav');
-[s2, fe] = audioread('SonsACompresser/son2.wav');
-[s3, fe] = audioread('SonsACompresser/son3.wav');
+%[s2, fe] = audioread('SonsACompresser/son2.wav');
+%[s3, fe] = audioread('SonsACompresser/son3.wav');
 
 % Calcul du pas de la fréquence pour un spectre discret ainsi que de la plage de fréquence
 N = length(s1);
