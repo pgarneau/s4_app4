@@ -17,24 +17,22 @@ plot(t2);
 subplot(3,1,3)
 plot(t3);
 
-% Augmentation des arrays des sons et signal centré
-
+% Création de array de longueur t1, t2 et t3
+% Insertion des données s1, s2 et s3 au centre des arrays t1, t2, t3
 Q1(numel(t1)) = 0;
 Q1 = Q1';
-
 Q2(numel(t2)) = 0;
 Q2 = Q2';
-
 Q3(numel(t3)) = 0;
 Q3 = Q3';
 
 for index = length(Q1)/2 - length(s1)/2:length(Q1)/2 - length(s1)/2 + length(s1) - 1
-    patate = index - length(Q1)/2 + length(s1)/2 + 1;
-    Q1(index) = s1(patate);
-    Q2(index) = s2(patate);
-    Q3(index) = s3(patate);
+    Q1(index) = s1(index - length(Q1)/2 + length(s1)/2 + 1);
+    Q2(index) = s2(index - length(Q1)/2 + length(s1)/2 + 1);
+    Q3(index) = s3(index - length(Q1)/2 + length(s1)/2 + 1);
 end
 
+% Augmentation des arrays des sons et signal centré
 s1(numel(t1)) = 0;
 s2(numel(t1)) = 0;
 s3(numel(t1)) = 0;
@@ -69,6 +67,7 @@ corrT3S1Q = xcorr(t3,Q1,'unbiased');
 corrT3S2Q = xcorr(t3,Q2,'unbiased');
 corrT3S3Q = xcorr(t3,Q3,'unbiased');
 
+% Affichage xcorr vs xcorr unbiased et centré
 figure
 subplot(3,2,1)
 plot(corrT1S1);
@@ -114,3 +113,58 @@ plot(corrT3S3Q);
 
 
 % 0.006205
+seuil = 0.006;
+
+if max(corrT1S1Q) > seuil
+    disp('Son 1 trouvé dans la trame 1');
+else
+    disp('Son 1 pas trouvé dans la trame 1');
+end
+
+if max(corrT1S2Q) > seuil
+    disp('Son 2 trouvé dans la trame 1');
+else
+    disp('Son 3 pas trouvé dans la trame 1');
+end
+
+if max(corrT1S3Q) > seuil
+    disp('Son 3 trouvé dans la trame 1');
+else
+    disp('Son 3 pas trouvé dans la trame 1');
+end
+
+if max(corrT2S1Q) > seuil
+    disp('Son 1 trouvé dans la trame 2');
+else
+    disp('Son 1 pas trouvé dans la trame 2');
+end
+
+if max(corrT2S2Q) > seuil
+    disp('Son 2 trouvé dans la trame 2');
+else
+    disp('Son 2 pas trouvé dans la trame 2');
+end
+
+if max(corrT2S3Q) > seuil
+    disp('Son 3 trouvé dans la trame 2');
+else
+    disp('Son 3 pas trouvé dans la trame 2');
+end
+
+if max(corrT3S1Q) > seuil
+    disp('Son 1 trouvé dans la trame 3');
+else
+    disp('Son 1 pas trouvé dans la trame 3');
+end
+
+if max(corrT3S2Q) > seuil
+    disp('Son 2 trouvé dans la trame 3');
+else
+    disp('Son 2 pas trouvé dans la trame 3');
+end
+
+if max(corrT3S3Q) > seuil
+    disp('Son 3 trouvé dans la trame 3');
+else
+    disp('Son 3 pas trouvé dans la trame 3');
+end
