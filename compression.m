@@ -20,7 +20,7 @@ freq = -fe/2:df:(fe/2 - df);
 [y1, y2, y3] = GetEnvelope(s1, s2, s3);
 
 % Get linearised envelopes
-[lin1, lin2, lin3, splin1, splin2, splin3] = Interpolation(y1, y2, y3, s1, s2, s3);
+[lin1, lin2, lin3, splin1, splin2, splin3, sampleS1, sampleS2, sampleS3] = Interpolation(y1, y2, y3, s1, s2, s3);
 
 rebuilt_s1_lin = rebuilt_sin_1 .* lin1;
 rebuilt_s1_splin = rebuilt_sin_1 .* splin1;

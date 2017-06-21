@@ -28,7 +28,7 @@ min_peak_distance = 20;
 min_peak_height = 50;
 
 [amp, freq] = findpeaks(s2mag(1:end/2), 'MinPeakHeight', min_peak_height, 'MinPeakDistance', min_peak_distance);
-
+disp(length(freq));
 % Rebuild sine
 s2_total = 0;
 t = 0:1/fe:(N/fe - 1/fe);
@@ -51,7 +51,7 @@ min_peak_distance = 10;
 min_peak_height = 200;
 
 [amp, freq] = findpeaks(s3mag(1:end/2), 'MinPeakHeight', min_peak_height, 'MinPeakDistance', min_peak_distance);
-
+disp(length(freq));
 % Rebuild sine
 s3_total = 0;
 t = 0:1/fe:(N/fe - 1/fe);

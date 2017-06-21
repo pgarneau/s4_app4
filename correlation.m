@@ -17,6 +17,8 @@ plot(t2);
 subplot(3,1,3)
 plot(t3);
 
+autocorr(t1)
+
 % Création de array de longueur t1, t2 et t3
 % Insertion des données s1, s2 et s3 au centre des arrays t1, t2, t3
 Q1(numel(t1)) = 0;
