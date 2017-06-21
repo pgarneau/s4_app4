@@ -27,13 +27,19 @@ k3 = 1:1:length(s3);
 
 %Interpolation linéaire
 lin1 = interp1(x_sampleS1, sampleS1, k1);
+rms_lin1 = GetRMS(y1, lin1)
 lin2 = interp1(x_sampleS2, sampleS2, k2);
+rms_lin2 = GetRMS(y2, lin2)
 lin3 = interp1(x_sampleS3, sampleS3, k3);
+rms_lin3 = GetRMS(y3, lin3)
 
 %Interpolation par spline
 splin1 = spline(x_sampleS1, sampleS1, k1);
+rms_splin1 = GetRMS(y1, splin1)
 splin2 = spline(x_sampleS2, sampleS2, k2);
+rms_splin2 = GetRMS(y2, splin2)
 splin3 = spline(x_sampleS3, sampleS3, k3);
+rms_splin3 = GetRMS(y3, splin3)
 
 figure
 subplot(3,1,1)
