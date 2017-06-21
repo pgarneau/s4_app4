@@ -10,17 +10,16 @@ close all
 [t3, fe] = audioread('TramesAReconnaitre/trame3.wav');
 
 figure
-subplot(3,1,1)
+subplot(4,1,1)
 plot(t1);
-subplot(3,1,2)
+subplot(4,1,2)
 plot(t2);
-subplot(3,1,3)
+subplot(4,1,3)
 plot(t3);
-
+subplot(4,1,4)
 autocorr(t1)
 
 % Création de array de longueur t1, t2 et t3
-% Insertion des données s1, s2 et s3 au centre des arrays t1, t2, t3
 Q1(numel(t1)) = 0;
 Q1 = Q1';
 Q2(numel(t2)) = 0;
@@ -28,6 +27,7 @@ Q2 = Q2';
 Q3(numel(t3)) = 0;
 Q3 = Q3';
 
+% Insertion des données s1, s2 et s3 au centre des arrays t1, t2, t3
 for index = length(Q1)/2 - length(s1)/2:length(Q1)/2 - length(s1)/2 + length(s1) - 1
     Q1(index) = s1(index - length(Q1)/2 + length(s1)/2 + 1);
     Q2(index) = s2(index - length(Q1)/2 + length(s1)/2 + 1);
@@ -73,84 +73,65 @@ corrT3S3Q = xcorr(t3,Q3,'unbiased');
 figure
 subplot(3,2,1)
 plot(corrT1S1);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 1 et son 1')
 hold on
 plot(corrT1S2);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 1 et son 2')
 hold on
 plot(corrT1S3);
 ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 1 et son 3')
+title('Corrélation xcorr entre trame 1 et son 1, 2 et 3')
+legend('Son 1', 'Son 2', 'Son 3')
 
 subplot(3,2,3)
 plot(corrT2S1);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 2 et son 1')
 hold on
 plot(corrT2S2);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 2 et son 2')
 hold on
 plot(corrT2S3);
 ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 2 et son 3')
+title('Corrélation xcorr entre trame 2 et son 1, 2 et 3')
+legend('Son 1', 'Son 2', 'Son 3')
 
 subplot(3,2,5)
 plot(corrT3S1);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 3 et son 1')
 hold on
 plot(corrT3S2);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 3 et son 2')
 hold on
 plot(corrT3S3);
 ylabel('Amplitude (V)')
-title('Corrélation xcorr entre trame 3 et son 3')
+title('Corrélation xcorr entre trame 3 et son 1, 2 et 3')
+legend('Son 1', 'Son 2', 'Son 3')
 
 subplot(3,2,2)
 plot(corrT1S1Q);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 1 et son 1')
 hold on
 plot(corrT1S2Q);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 1 et son 2')
 hold on
 plot(corrT1S3Q);
 ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 1 et son 3')
+title('Corrélation xcorr unbiased et centrée entre trame 1 et son 1, 2 et 3')
+legend('Son 1', 'Son 2', 'Son 3')
 
 subplot(3,2,4)
 plot(corrT2S1Q);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 2 et son 1')
 hold on
 plot(corrT2S2Q);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 2 et son 2')
 hold on
 plot(corrT2S3Q);
 ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 2 et son 3')
+title('Corrélation xcorr unbiased et centrée entre trame 2 et son 1, 2 et 3')
+legend('Son 1', 'Son 2', 'Son 3')
 
 subplot(3,2,6)
 plot(corrT3S1Q);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 3 et son 1')
 hold on
 plot(corrT3S2Q);
-ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 3 et son 2')
 hold on
 plot(corrT3S3Q);
 ylabel('Amplitude (V)')
-title('Corrélation xcorr unbiased et centrée entre trame 3 et son 3')
+title('Corrélation xcorr unbiased et centrée entre trame 3 et son 1, 2 et 3')
+legend('Son 1', 'Son 2', 'Son 3')
 
-
-% 0.006205
+% Seuil déterminé arbitrairement
 seuil = 0.006;
 
 if max(corrT1S1Q) > seuil
