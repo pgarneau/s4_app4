@@ -39,25 +39,28 @@ figure
 subplot(3,1,1)
 plot(k1,splin1);
 hold on;
-plot(y1);
-hold on;
 plot(lin1);
-title('Spline vs linéaire vs env (s1)');
+hold on;
+plot(y1);
+title('Spline vs linéaire vs enveloppe (s1)');
+legend('Spline', 'Lineaire', 'Enveloppe')
 
 subplot(3,1,2)
 plot(k2,splin2);
 hold on;
-plot(y2);
-hold on;
 plot(lin2);
-title('Spline vs linéaire vs env (s2)');
+hold on;
+plot(y2);
+title('Spline vs linéaire vs enveloppe (s2)');
+legend('Spline', 'Lineaire', 'Enveloppe')
 
 subplot(3,1,3)
 plot(k3,splin3);
 hold on;
-plot(y3);
-hold on;
 plot(lin3);
-title('Spline vs linéaire vs env (s3)');
+hold on;
+plot(y3);
+title('Spline vs linéaire vs enveloppe (s3)');
+legend('Spline', 'Lineaire', 'Enveloppe')
 end
 

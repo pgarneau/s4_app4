@@ -18,19 +18,19 @@ subplot(3,1,1)
 plot(env1);
 hold on;
 plot(y1);
-title('Signal redressé vs env pour son 1');
+title('Signal redressé vs enveloppe pour son 1');
 
 subplot(3,1,2)
 plot(env2);
 hold on;
 plot(y2);
-title('Signal redressé vs env pour son 2');
+title('Signal redressé vs enveloppe pour son 2');
 
 subplot(3,1,3)
 plot(env3);
 hold on;
 plot(y3);
-title('Signal redressé vs env pour son 3');
+title('Signal redressé vs enveloppe pour son 3');
 
 end
 

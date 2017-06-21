@@ -32,26 +32,35 @@ rebuilt_s3_splin = rebuilt_sin_3 .* splin3;
 figure
 subplot(3,1,1)
 plot(s1)
+title('Signal original')
 subplot(3,1,2)
 plot(rebuilt_s1_lin)
+title('Signal reconstruit avec interpolation lineaire')
 subplot(3,1,3)
 plot(rebuilt_s1_splin)
+title('Signal reconstruit avec interpolation splinecubique')
 
 figure
 subplot(3,1,1)
 plot(s2)
+title('Signal original')
 subplot(3,1,2)
 plot(rebuilt_s2_lin)
+title('Signal reconstruit avec interpolation lineaire')
 subplot(3,1,3)
 plot(rebuilt_s2_splin)
+title('Signal reconstruit avec interpolation splinecubique')
 
 figure
 subplot(3,1,1)
 plot(s3)
+title('Signal original')
 subplot(3,1,2)
 plot(rebuilt_s3_lin)
+title('Signal reconstruit avec interpolation lineaire')
 subplot(3,1,3)
 plot(rebuilt_s3_splin)
+title('Signal reconstruit avec interpolation splinecubique')
 
 % soundsc(s1, fe);
 % pause(3)
