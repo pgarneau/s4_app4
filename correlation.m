@@ -71,45 +71,81 @@ corrT3S3Q = xcorr(t3,Q3,'unbiased');
 figure
 subplot(3,2,1)
 plot(corrT1S1);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 1 et son 1')
 hold on
 plot(corrT1S2);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 1 et son 2')
 hold on
 plot(corrT1S3);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 1 et son 3')
 
 subplot(3,2,3)
 plot(corrT2S1);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 2 et son 1')
 hold on
 plot(corrT2S2);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 2 et son 2')
 hold on
 plot(corrT2S3);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 2 et son 3')
 
 subplot(3,2,5)
 plot(corrT3S1);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 3 et son 1')
 hold on
 plot(corrT3S2);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 3 et son 2')
 hold on
 plot(corrT3S3);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr entre trame 3 et son 3')
 
 subplot(3,2,2)
 plot(corrT1S1Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 1 et son 1')
 hold on
 plot(corrT1S2Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 1 et son 2')
 hold on
 plot(corrT1S3Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 1 et son 3')
 
 subplot(3,2,4)
 plot(corrT2S1Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 2 et son 1')
 hold on
 plot(corrT2S2Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 2 et son 2')
 hold on
 plot(corrT2S3Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 2 et son 3')
 
 subplot(3,2,6)
 plot(corrT3S1Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 3 et son 1')
 hold on
 plot(corrT3S2Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 3 et son 2')
 hold on
 plot(corrT3S3Q);
+ylabel('Amplitude (V)')
+title('Corrélation xcorr unbiased et centrée entre trame 3 et son 3')
 
 
 % 0.006205
