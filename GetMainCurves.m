@@ -1,3 +1,5 @@
+%Axel Bosco - bosa2002
+%Philippe Garneau - garp2405
 function [s1mag, s2mag, s3mag, s1phase, s2phase, s3phase] = GetMainCurves(sound_1, sound_2, sound_3, fe)
 % Display original sound
 figure

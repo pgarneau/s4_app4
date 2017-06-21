@@ -1,3 +1,5 @@
+%Axel Bosco - bosa2002
+%Philippe Garneau - garp2405
 function [y1, y2, y3] = GetEnvelope(sound_1, sound_2, sound_3)
 % Find envelope
 env1 = abs(sound_1);

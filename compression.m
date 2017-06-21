@@ -1,3 +1,5 @@
+%Axel Bosco - bosa2002
+%Philippe Garneau - garp2405
 clear all;
 close all;
 

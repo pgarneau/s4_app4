@@ -1,3 +1,5 @@
+%Axel Bosco - bosa2002
+%Philippe Garneau - garp2405
 function [s1_total, s2_total, s3_total] = RebuildSinus(s1mag, s2mag, s3mag, s1phase, s2phase, s3phase, fe, N)
 % Find peaks S1
 min_peak_distance = 5;

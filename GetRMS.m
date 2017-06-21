@@ -1,3 +1,5 @@
+%Axel Bosco - bosa2002
+%Philippe Garneau - garp2405
 function [total] = GetRMS(og_data, new_data)
 total = 0;
 for index = 1:70000

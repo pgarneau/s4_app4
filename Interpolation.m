@@ -1,3 +1,5 @@
+%Axel Bosco - bosa2002
+%Philippe Garneau - garp2405
 function [lin1, lin2, lin3, splin1, splin2, splin3, sampleS1, sampleS2, sampleS3] = Interpolation(y1, y2, y3, s1, s2, s3)
 %Échantillonage
 sampleS1 = [];
